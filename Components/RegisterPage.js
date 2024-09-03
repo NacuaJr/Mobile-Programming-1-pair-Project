@@ -1,45 +1,78 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import { View, SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity } from "react-native";
+import { registerUser } from '../auth.js';
 
-
-export default function RegisterPage({navigation}){
+export default function RegisterPage({ navigation }) {
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [isLoginButtonPressed, setIsLoginButtonPressed] = useState(false);
+
     const toSignIn = () => {
-        navigation.push('LoginPage')
+        navigation.push('LoginPage');
     }
-    return(
+
+    const handleRegister = () => {
+        registerUser(firstName, lastName, email, password, confirmPassword);
+    }
+
+    const toTerms = () => {
+        navigation.push('TermsOfService')
+    }
+
+    return (
         <>
             <SafeAreaView style={styles.container}>
-                <StatusBar style="light"/>
+                <StatusBar style="light" />
                 <Text style={styles.registerText}>Register</Text>
 
-                <TextInput style={styles.firstName}
-                placeholder='First name'
-                placeholderTextColor={'#fff'}
+                <TextInput 
+                    style={styles.firstName}
+                    placeholder='First name'
+                    placeholderTextColor={'#fff'}
+                    value={firstName}
+                    onChangeText={setFirstName}
                 />
-                <TextInput style={styles.lastName}
-                placeholder='Last name'
-                placeholderTextColor={'#fff'}
+                <TextInput 
+                    style={styles.lastName}
+                    placeholder='Last name'
+                    placeholderTextColor={'#fff'}
+                    value={lastName}
+                    onChangeText={setLastName}
                 />
-                <TextInput style={styles.userEmail}
-                placeholder='Email address'
-                placeholderTextColor={'#fff'}
+                <TextInput 
+                    style={styles.userEmail}
+                    placeholder='Email address'
+                    placeholderTextColor={'#fff'}
+                    value={email}
+                    onChangeText={setEmail}
                 />
-                <TextInput style={styles.password}
-                placeholder='Enter password'
-                placeholderTextColor={'#fff'}
-                secureTextEntry={true}
+                <TextInput 
+                    style={styles.password}
+                    placeholder='Enter password'
+                    placeholderTextColor={'#fff'}
+                    secureTextEntry={true}
+                    value={password}
+                    onChangeText={setPassword}
                 />
-                <TextInput style={styles.rePassword}
-                placeholder='Re-enter password'
-                placeholderTextColor={'#fff'}
-                secureTextEntry={true}
+                <TextInput 
+                    style={styles.rePassword}
+                    placeholder='Re-enter password'
+                    placeholderTextColor={'#fff'}
+                    secureTextEntry={true}
+                    value={confirmPassword}
+                    onChangeText={setConfirmPassword}
                 />
 
-                <TouchableOpacity style={[styles.registerButton, {backgroundColor: isLoginButtonPressed ? '#35343B' : '#20AB7D'}]}
-                            onPressIn={() => setIsLoginButtonPressed(true)}
-                            onPressOut={() => setIsLoginButtonPressed(false)}>
+                <TouchableOpacity 
+                    style={[styles.registerButton, { backgroundColor: isLoginButtonPressed ? '#35343B' : '#20AB7D' }]}
+                    onPressIn={() => setIsLoginButtonPressed(true)}
+                    onPressOut={() => setIsLoginButtonPressed(false)}
+                    onPress={handleRegister} // Register the user on button press
+                >
                     <Text style={styles.registerButtonText}>Register</Text>
                 </TouchableOpacity>
 
@@ -51,32 +84,29 @@ export default function RegisterPage({navigation}){
                 </View>
 
                 <View style={styles.TOS}>
-                <Text style={styles.agreeText}>By using this app, you are agreeing to our </Text>
+                    <Text style={styles.agreeText}>By using this app, you are agreeing to our </Text>
                     <TouchableOpacity>
-                        <Text style={styles.terms}>Terms of Service.</Text>
+                        <Text style={styles.terms} onPress={toTerms}>Terms of Service.</Text>
                     </TouchableOpacity>
                 </View>
-
             </SafeAreaView>
         </>
     );
 }
 
 const styles = StyleSheet.create({
-    container : {
+    container: {
         flex: 1,
         backgroundColor: '#25242B',
     },
-
-    registerText : {
+    registerText: {
         color: '#20AB7D',
         fontSize: 40,
         alignSelf: 'center',
         marginTop: '30%',
         fontWeight: 'bold'
     },
-
-    firstName : {
+    firstName: {
         backgroundColor: '#17171B',
         color: '#fff',
         width: '75%',
@@ -86,8 +116,7 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         paddingLeft: 20,
     },
-
-    lastName : {
+    lastName: {
         backgroundColor: '#17171B',
         color: '#fff',
         width: '75%',
@@ -97,8 +126,7 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         paddingLeft: 20,
     },
-
-    userEmail : {
+    userEmail: {
         backgroundColor: '#17171B',
         color: '#fff',
         width: '75%',
@@ -108,8 +136,7 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         paddingLeft: 20,
     },
-
-    password : {
+    password: {
         backgroundColor: '#17171B',
         color: '#fff',
         width: '75%',
@@ -119,8 +146,7 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         paddingLeft: 20,
     },
-
-    rePassword : {
+    rePassword: {
         backgroundColor: '#17171B',
         color: '#fff',
         width: '75%',
@@ -130,45 +156,39 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         paddingLeft: 20,
     },
-
     registerButton: {
-        height: 50, 
+        height: 50,
         width: '75%',
         alignSelf: 'center',
         marginTop: '10%',
         borderRadius: 15,
-      },
-    
-      registerButtonText : {
+    },
+    registerButtonText: {
         color: '#fff',
         textAlign: 'center',
         verticalAlign: 'middle',
         lineHeight: 44,
-      },
-
-      loginText : {
+    },
+    loginText: {
         flexDirection: 'row',
         alignSelf: 'center',
         marginTop: '7%',
-      },
-      isMemberText : {
+    },
+    isMemberText: {
         color: '#fff'
-      },
-      signInText : {
+    },
+    signInText: {
         color: '#20AB7D'
-      },
-
-      TOS : {
+    },
+    TOS: {
         alignSelf: 'center',
-        marginTop: '23.7%',   
-      },
-    
-      agreeText : {
+        marginTop: '23.7%',
+    },
+    agreeText: {
         color: '#fff'
-      },
-    
-      terms : {
+    },
+    terms: {
         color: '#20AB7D',
         textAlign: 'center',
-      }
-})
+    }
+});

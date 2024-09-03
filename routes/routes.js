@@ -3,6 +3,9 @@ import {createAppContainer} from 'react-navigation';
 import LoginPage from '../Components/LoginPage';
 import RegisterPage from '../Components/RegisterPage';
 import LoadingPage from '../Components/LoadingPage';
+import HomePage from '../Components/HomePage';
+import TermsOfService from '../Components/TermsOfService';
+
 const screens = {
     
     LoadingPage : {
@@ -19,8 +22,22 @@ const screens = {
         }
     },
 
+    HomePage : {
+        screen : HomePage,
+        navigationOptions : {
+            headerShown : false,
+        }
+    },
+
     RegisterPage : {
         screen: RegisterPage,
+        navigationOptions : {
+            headerShown : false,
+        }
+    },
+
+    TermsOfService : {
+        screen : TermsOfService,
         navigationOptions : {
             headerShown : false,
         }

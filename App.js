@@ -1,19 +1,16 @@
-import { StyleSheet} from 'react-native';
-import LoginPage from './Components/LoginPage.js'
-import RegisterPage from './Components/RegisterPage.js';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 import Routes from './routes/routes.js';
-import LoadingPage from './Components/LoadingPage.js';
-export default function App() {
 
-  return (
-    <Routes/>
-  );
+export default function App() {
+    return (
+            <NavigationContainer>
+                <Routes />
+            </NavigationContainer>
+    );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#25242B',
-  },
-
+    
 });
