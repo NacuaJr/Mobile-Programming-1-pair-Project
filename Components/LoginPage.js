@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
         fontSize: 40,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginTop: '45%'
+        marginTop: '63%'
     },
     userEmail: {
         backgroundColor: '#17171B',
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
         width: '75%',
         height: 50,
         alignSelf: 'center',
-        marginTop: '25%',
+        marginTop: '7%',
         borderRadius: 12,
         paddingLeft: 20,
     },

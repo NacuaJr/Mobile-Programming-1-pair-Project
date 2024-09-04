@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
         color: '#20AB7D',
         fontSize: 40,
         alignSelf: 'center',
-        marginTop: '30%',
+        marginTop: '38%',
         fontWeight: 'bold'
     },
     firstName: {
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
         width: '75%',
         height: 50,
         alignSelf: 'center',
-        marginTop: '15%',
+        marginTop: '7%',
         borderRadius: 12,
         paddingLeft: 20,
     },
