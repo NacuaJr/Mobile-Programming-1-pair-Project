@@ -1,7 +1,6 @@
-import { StyleSheet, Text, Image, View, SafeAreaView, TouchableOpacity } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
-export default function HomePage({navigation}){
+import {StyleSheet, SafeAreaView, Text, View } from "react-native";
 
+export default function Favorites(){
     return(
         <>
             <View style={styles.container}>

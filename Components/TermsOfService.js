@@ -5,7 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 export default function TermsOfService({navigation}){
 
     const toLogin = () => {
-        navigation.push('LoginPage')
+        navigation.navigate('LoginPage')
     }
 
     return(

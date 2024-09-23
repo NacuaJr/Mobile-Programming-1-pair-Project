@@ -9,18 +9,18 @@ export default function LoginPage({ navigation }) {
 
     
     const toRegister = () => {
-        navigation.push('RegisterPage');
+        navigation.navigate('RegisterPage');
     }
 
     const handleLogin = async () => {
         const result = await loginUser(email, password);
         if (result === 1) {
-          navigation.push('HomePage');
+          navigation.navigate('Nav');
         }
       };
       
     const toTerms = () => {
-        navigation.push('TermsOfService')
+        navigation.navigate('TermsOfService')
     }
     
     return (

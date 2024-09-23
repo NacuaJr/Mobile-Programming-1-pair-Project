@@ -12,7 +12,7 @@ export default function RegisterPage({ navigation }) {
     const [isLoginButtonPressed, setIsLoginButtonPressed] = useState(false);
 
     const toSignIn = () => {
-        navigation.push('LoginPage');
+        navigation.navigate('LoginPage');
     }
 
     const handleRegister = () => {
@@ -20,7 +20,7 @@ export default function RegisterPage({ navigation }) {
     }
 
     const toTerms = () => {
-        navigation.push('TermsOfService')
+        navigation.navigate('TermsOfService')
     }
 
     return (

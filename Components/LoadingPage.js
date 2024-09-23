@@ -6,7 +6,7 @@ export default function LoadingPage({navigation}){
 
     const LoadingImage = require('../assets/logo.png');
     const toLogin = () => {
-        navigation.push('LoginPage')
+        navigation.navigate('LoginPage')
     }
 
     return(
