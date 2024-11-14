@@ -27,7 +27,7 @@ export default function Navigation(){
                 backgroundColor: "#25242B",
             },
         })}>
-            <Tab.Screen name="HomePage" component={HomePage} options={{headerShown: false}}/>
+            <Tab.Screen name="HomePage" component={HomePage} options={{headerShown: false, tabBarLabel:"Home"}}/>
             <Tab.Screen name="Favorites" component={Favorites} options={{headerShown: false}}/>
             <Tab.Screen name="Cart" component={Cart} options={{headerShown: false}}/>
         </Tab.Navigator>

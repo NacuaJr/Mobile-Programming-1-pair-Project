@@ -1,19 +1,28 @@
-import { StyleSheet, Text, Image, View, SafeAreaView, TouchableOpacity } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
-export default function HomePage({navigation}){
+import React from 'react';
+import { FlatList, View, Text, Image, StyleSheet, ScrollView } from 'react-native';
+import FoodList from './FoodList';
+import DashboardList from './DashboardList';
 
-    return(
-        <>
-            <View style={styles.container}>
-                    <Text>Hello World</Text>
-            </View>
-        </>
+const HomePage = () => {
+    const renderHorizontalList = () => (
+        <DashboardList/>
     );
-}
+    return (
+        <FlatList
+            ListHeaderComponent={renderHorizontalList}  // Add horizontal list as the header
+            data={[{ key: 'foodList' }]}  // Dummy data to render FoodList as a single item
+            renderItem={() => <FoodList />}  // Render FoodList in the main vertical list
+            keyExtractor={(item) => item.key}
+            contentContainerStyle={styles.container}
+        />
+    );
+};
 
 const styles = StyleSheet.create({
-    container : {
+    container: {
         flex: 1,
-        backgroundColor: "#25242B",
-    }
-})
+        backgroundColor: '#1C1C1E',
+    },
+});
+
+export default HomePage;
