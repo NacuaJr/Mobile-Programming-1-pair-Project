@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomePage from '../Components/HomePage';
 import Cart from '../Components/Cart';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import Profile from '../Components/Profile';
 export default function Navigation(){
     
     const Tab = createBottomTabNavigator();
@@ -18,6 +19,8 @@ export default function Navigation(){
                     iconName = focused ? "heart-sharp" : "heart-outline"
                 } else if (route.name === "Cart"){
                     iconName = focused ? "cart-sharp" : "cart-outline"
+                } else if(route.name === "Profile"){
+                    iconName = focused ? "person" : "person-outline"
                 }
                 return <Ionicons name={iconName} size={size} color={color}/>
             },
@@ -30,6 +33,7 @@ export default function Navigation(){
             <Tab.Screen name="HomePage" component={HomePage} options={{headerShown: false, tabBarLabel:"Home"}}/>
             <Tab.Screen name="Favorites" component={Favorites} options={{headerShown: false}}/>
             <Tab.Screen name="Cart" component={Cart} options={{headerShown: false}}/>
+            <Tab.Screen name="Profile" component={Profile} options={{headerShown: false}}/>
         </Tab.Navigator>
     )
 }

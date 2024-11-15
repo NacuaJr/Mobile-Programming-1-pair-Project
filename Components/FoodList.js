@@ -10,7 +10,6 @@ const items = [
   { id: '4', name: 'Donut Stall', price: 'PHP 75', image: 'https://example.com/image4.jpg' },
   { id: '5', name: 'Java Rice Stall', price: 'PHP 75', image: 'https://example.com/image5.jpg' },
   { id: '6', name: 'Buko Shake Stall', price: 'PHP 60', image: 'https://example.com/image6.jpg' },
-  // Add more items as needed
   { id: '7', name: 'Koi Koi Stall', price: 'PHP 85', image: 'https://example.com/image1.jpg' },
   { id: '8', name: 'Juice Stall', price: 'PHP 60', image: 'https://example.com/image2.jpg' },
   { id: '9', name: 'Chicken Stall', price: 'PHP 90', image: 'https://example.com/image3.jpg' },
@@ -26,7 +25,7 @@ const FoodList = () => {
     <FlatList
       data={items}
       keyExtractor={(item) => item.id}
-      numColumns={2} // Display two items per row
+      numColumns={2} // Display two items per row pls ayaw i change lamats
       renderItem={({ item }) => (
         <View style={styles.card}>
           <Image source={{ uri: item.image }} style={styles.image} />
@@ -48,13 +47,13 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
   card: {
-    backgroundColor: '#2DBD74', // Green background
+    backgroundColor: '#2DBD74', 
     borderRadius: 10,
     padding: 10,
     margin: 10,
     alignItems: 'center',
     flex: 1,
-    maxWidth: '45%', // Adjust for spacing between columns
+    maxWidth: '45%', 
     minHeight: 180,
   },
   image: {

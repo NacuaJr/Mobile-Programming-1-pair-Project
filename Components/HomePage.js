@@ -9,9 +9,9 @@ const HomePage = () => {
     );
     return (
         <FlatList
-            ListHeaderComponent={renderHorizontalList}  // Add horizontal list as the header
-            data={[{ key: 'foodList' }]}  // Dummy data to render FoodList as a single item
-            renderItem={() => <FoodList />}  // Render FoodList in the main vertical list
+            ListHeaderComponent={renderHorizontalList} 
+            data={[{ key: 'foodList' }]} 
+            renderItem={() => <FoodList />}  
             keyExtractor={(item) => item.key}
             contentContainerStyle={styles.container}
         />

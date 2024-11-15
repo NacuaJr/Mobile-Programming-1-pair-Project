@@ -32,7 +32,7 @@ const DashboardList = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#1C1C1E', // Dark background color to match reference
+    backgroundColor: '#1C1C1E', 
     paddingVertical: 10,
     paddingHorizontal: 5,
   },
@@ -41,12 +41,12 @@ const styles = StyleSheet.create({
   },
   itemContainer: {
     alignItems: 'center',
-    marginRight: 15, // Spacing between items
+    marginRight: 15, 
   },
   image: {
     width: 50,
     height: 50,
-    borderRadius: 10, // Rounds the edges of the image
+    borderRadius: 10, 
     marginBottom: 5,
   },
   itemText: {
